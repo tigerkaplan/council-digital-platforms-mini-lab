@@ -1,0 +1,11 @@
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/sites/*/files/
+*.log
+backups/
+.ddev/traefik/
+
+# Private SQLite evidence is regenerated only in isolated temporary locations.
+evidence/16-sql-data/service-requests.sqlite

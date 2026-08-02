@@ -1,0 +1,14 @@
+webform_help_icons:
+  css:
+    theme:
+      css/webform-help-icons.css: {}
+
+webform_error_summary_focus:
+  css:
+    theme:
+      css/webform-error-summary-focus.css: {}
+  js:
+    js/webform-error-summary-focus.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

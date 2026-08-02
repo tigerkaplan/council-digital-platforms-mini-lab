@@ -1,0 +1,7 @@
+name: Council Service Request Validation
+type: module
+description: Adds server-side validation for the fictional council service request webform.
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - webform:webform

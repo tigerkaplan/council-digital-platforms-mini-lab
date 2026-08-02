@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Adds validation to the council service request webform.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_webform_submission_form_alter().
+ */
+function council_service_request_validation_webform_submission_form_alter(array &$form, FormStateInterface $form_state, $form_id): void {
+  $webform_submission = $form_state->getFormObject()->getEntity();
+
+  if ($webform_submission->getWebform()->id() !== 'report_public_highway_problem') {
+    return;
+  }
+
+  $form['#validate'][] = 'council_service_request_validation_validate_postcode';
+}
+
+/**
+ * Validates and normalises the service request postcode.
+ */
+function council_service_request_validation_validate_postcode(array &$form, FormStateInterface $form_state): void {
+  $postcode = strtoupper(trim((string) $form_state->getValue('postcode')));
+  $postcode = preg_replace('/\s+/', ' ', $postcode);
+  $form_state->setValue('postcode', $postcode);
+
+  $postcode_pattern = '/^(?:GIR 0AA|[A-PR-UWYZ][0-9][0-9A-HJKSTUW]? [0-9][ABD-HJLNP-UW-Z]{2}|[A-PR-UWYZ][A-HK-Y][0-9][0-9ABEHMNPRVWXY]? [0-9][ABD-HJLNP-UW-Z]{2})$/';
+
+  if (!preg_match($postcode_pattern, $postcode)) {
+    $form_state->setErrorByName('postcode', t('Please enter a valid UK postcode, for example BN3 1AA.'));
+  }
+}

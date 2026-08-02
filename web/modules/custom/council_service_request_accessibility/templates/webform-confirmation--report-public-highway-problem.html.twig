@@ -1,0 +1,23 @@
+{#
+/**
+ * Scoped confirmation template for the public-highway problem Webform.
+ */
+#}
+{{ attach_library('webform/webform.confirmation') }}
+
+{% if progress %}
+  {{ progress }}
+{% endif %}
+
+<div{{ attributes.addClass('webform-confirmation', 'council-service-request-confirmation') }}>
+  <section class="council-service-request-confirmation__content">
+    <h2>Thank you. Your report has been submitted.</h2>
+    <p>We will review the information you have provided. If you asked us to contact you, we will use the details in your report.</p>
+  </section>
+
+  {% if back %}
+    <div class="webform-confirmation__back council-service-request-confirmation__back">
+      <a href="{{ back_url }}" rel="prev"{{ back_attributes }}>Back to form</a>
+    </div>
+  {% endif %}
+</div>

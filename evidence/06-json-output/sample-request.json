@@ -1,0 +1,1 @@
+{"reference":"LSR-DEMO-10482","requestType":"faulty_streetlight","location":{"description":"Outside number 24, Example Street","postcode":"BN3 1AA","assetReference":"LP-418"},"risk":{"immediateSafetyRisk":false,"details":null},"contact":{"name":"Alex Morgan","email":"alex@example.test"},"status":"new"}

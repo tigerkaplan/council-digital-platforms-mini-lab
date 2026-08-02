@@ -1,0 +1,8 @@
+council_service_request_api.demo:
+  path: '/api/service-request/demo'
+  defaults:
+    _controller: '\Drupal\council_service_request_api\Controller\ServiceRequestApiController::demo'
+    _title: 'Service request demonstration'
+  requirements:
+    _permission: 'access content'
+  methods: [GET]

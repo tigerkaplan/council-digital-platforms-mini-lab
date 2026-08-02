@@ -1,0 +1,5 @@
+name: Council Service Request API
+type: module
+description: Provides a read-only fictional council service request demonstration endpoint.
+package: Custom
+core_version_requirement: ^10

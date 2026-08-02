@@ -1,0 +1,5 @@
+.webform-submission-form .webform-error-summary-focus,
+.webform-submission-form .webform-error-summary-focus:focus {
+  outline: 3px solid #1d70b8;
+  outline-offset: 2px;
+}

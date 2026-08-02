@@ -1,0 +1,6 @@
+name: Council Service Request Accessibility
+type: module
+description: Accessibility fixes for the council service request Drupal Webform.
+core_version_requirement: ^10
+package: Custom
+

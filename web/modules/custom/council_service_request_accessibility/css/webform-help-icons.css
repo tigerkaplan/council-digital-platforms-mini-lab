@@ -1,0 +1,8 @@
+.webform-submission-form .webform-element-help,
+.webform-submission-form .webform-element-help:focus,
+.webform-submission-form .webform-element-help:hover,
+.webform-submission-form .webform-element-help:active {
+  color: #ffffff;
+  border-color: #4b5563;
+  background: #4b5563;
+}

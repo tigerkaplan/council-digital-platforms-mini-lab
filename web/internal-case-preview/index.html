@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internal case preview</title>
+    <meta
+      name="description"
+      content="A staff-facing preview of a fictional council service request."
+    >
+    <link rel="stylesheet" href="/internal-case-preview/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div class="page-shell">
+      <header class="page-header">
+        <p class="eyebrow">Council service preview</p>
+        <h1>Internal case preview</h1>
+        <p class="page-description">
+          A staff-facing preview of a fictional council service request.
+        </p>
+      </header>
+
+      <main id="main-content" class="page-main">
+        <div id="app" class="case-preview" aria-live="polite" aria-busy="true">
+          <section class="panel panel--loading" aria-labelledby="loading-heading">
+            <h2 id="loading-heading">Loading case preview</h2>
+            <p>Loading the fictional service request from the preview endpoint.</p>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="/internal-case-preview/app.js"></script>
+  </body>
+</html>

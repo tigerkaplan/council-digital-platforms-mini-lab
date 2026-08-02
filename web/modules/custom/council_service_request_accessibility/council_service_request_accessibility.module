@@ -1,0 +1,35 @@
+<?php
+
+declare(strict_types=1);
+
+use Drupal\webform\WebformInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function council_service_request_accessibility_theme(): array {
+  return [
+    'webform_confirmation__report_public_highway_problem' => [
+      'base hook' => 'webform_confirmation',
+      'template' => 'webform-confirmation--report-public-highway-problem',
+      'path' => \Drupal::service('extension.list.module')->getPath('council_service_request_accessibility') . '/templates',
+      'variables' => [
+        'webform' => NULL,
+        'source_entity' => NULL,
+        'webform_submission' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function council_service_request_accessibility_page_attachments(array &$attachments): void {
+  $webform = \Drupal::routeMatch()->getParameter('webform');
+
+  if ($webform instanceof WebformInterface && $webform->id() === 'report_public_highway_problem') {
+    $attachments['#attached']['library'][] = 'council_service_request_accessibility/webform_help_icons';
+    $attachments['#attached']['library'][] = 'council_service_request_accessibility/webform_error_summary_focus';
+  }
+}
