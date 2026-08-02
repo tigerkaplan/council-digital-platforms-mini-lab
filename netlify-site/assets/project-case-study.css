@@ -358,14 +358,6 @@ table {
   color: #fff;
 }
 
-.button--disabled,
-.button--disabled:hover {
-  cursor: default;
-  background: #53616f;
-  border-color: #53616f;
-  color: #fff;
-}
-
 .button--secondary {
   background: transparent;
   color: var(--civic-dark);
