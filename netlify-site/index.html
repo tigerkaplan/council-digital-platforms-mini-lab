@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Council Digital Platforms Mini Lab</title>
+  <meta name="description" content="Accessibility-focused service forms, workflow, interoperability and local operational checks in a fictional local council service-request project.">
+  <link rel="stylesheet" href="assets/project-case-study.css">
+  <script src="assets/project-case-study.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="#top">Council Digital Mini Lab</a>
+      <nav class="desktop-nav" aria-label="Case study navigation">
+        <ul class="desktop-nav__list">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#users">Users</a></li>
+          <li><a href="#webform">Webform</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#workflow">Workflow</a></li>
+          <li><a href="#mendix">Mendix</a></li>
+          <li><a href="#interoperability">Interoperability</a></li>
+          <li><a href="#sql">SQL</a></li>
+          <li><a href="#devops">DevOps</a></li>
+          <li><a href="#boomi">Boomi design</a></li>
+          <li><a href="#evidence">Evidence</a></li>
+          <li><a href="#limitations">Limitations</a></li>
+          <li><a href="#learning">Learning</a></li>
+          <li><a href="#next-steps">Next steps</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="case-study-menu">
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+        <span>Menu</span>
+      </button>
+    </div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="#top">Case study</a></li>
+        <li id="current-section" aria-current="page">Overview</li>
+      </ol>
+    </nav>
+  </header>
+  <div class="mobile-drawer-backdrop" hidden></div>
+  <aside class="mobile-drawer" id="case-study-menu" aria-label="Case study sections" aria-hidden="true">
+    <div class="mobile-drawer__header">
+      <p class="mobile-drawer__title">Case study sections</p>
+      <button class="mobile-drawer__close" type="button" aria-label="Close case-study navigation">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <nav class="mobile-drawer__nav" aria-label="Case study sections">
+      <ul class="mobile-drawer__list">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#users">Users</a></li>
+        <li><a href="#webform">Webform</a></li>
+        <li><a href="#accessibility">Accessibility</a></li>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#mendix">Mendix</a></li>
+        <li><a href="#interoperability">Interoperability</a></li>
+        <li><a href="#sql">SQL</a></li>
+        <li><a href="#devops">DevOps</a></li>
+        <li><a href="#boomi">Boomi design</a></li>
+        <li><a href="#evidence">Evidence</a></li>
+        <li><a href="#limitations">Limitations</a></li>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#next-steps">Next steps</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main id="main">
+    <section class="case-hero" id="top" aria-labelledby="page-title">
+      <div class="case-container hero-layout">
+        <div class="hero-main">
+          <p class="eyebrow">Personal learning project</p>
+          <h1 class="hero-title" id="page-title">
+            <span class="hero-title__line hero-title__line--primary">Council Digital</span>
+            <span class="hero-title__line hero-title__line--secondary">Platforms Mini Lab</span>
+          </h1>
+          <p class="hero-subtitle">Accessibility-focused service forms, workflow, interoperability and local operational checks.</p>
+          <p class="hero-summary">I built and tested a fictional council service-request journey in a local environment, covering Drupal, accessibility, internal workflow, structured data, Mendix learning evidence, SQL and operational support, plus a clearly labelled Boomi-oriented design.</p>
+          <div class="hero-actions" aria-label="Key links">
+            <span class="button button--disabled" role="status">GitHub unavailable until clean public repository publication</span>
+            <a class="button button--secondary" href="#evidence">Evidence and testing</a>
+            <a class="button button--secondary" href="#limitations">Limitations</a>
+          </div>
+        </div>
+        <aside class="hero-scope" aria-labelledby="boundary-title">
+          <p class="scope-label">Scope</p>
+          <h2 id="boundary-title">Project boundaries</h2>
+          <ul class="check-list">
+            <li>Fictional council service-request scenario</li>
+            <li>Local development environment</li>
+            <li>No real citizen data</li>
+            <li>Not a production council service</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="overview" aria-labelledby="overview-title">
+      <div class="section__header">
+        <p class="eyebrow">Project snapshot</p>
+        <h2 id="overview-title">A compact learning project with a full evidence trail</h2>
+      </div>
+      <dl class="facts-grid">
+        <div><dt>Project type</dt><dd>Personal learning project</dd></div>
+        <div><dt>Scenario</dt><dd>Fictional public-highway problem report</dd></div>
+        <div><dt>Primary platform</dt><dd>Drupal 10 with DDEV</dd></div>
+        <div><dt>Additional learning</dt><dd>Mendix, JSON, XML, XPath, SOAP concepts, SQLite and operational support</dd></div>
+        <div><dt>Evidence</dt><dd>Reviewed against current source and runtime records</dd></div>
+        <div><dt>Data</dt><dd>Fictional only</dd></div>
+        <div><dt>Deployment</dt><dd>Local development environment</dd></div>
+      </dl>
+    </section>
+
+    <section class="section" id="problem" aria-labelledby="problem-title">
+      <div class="section__header">
+        <p class="eyebrow">Problem and objective</p>
+        <h2 id="problem-title">Make a fictional service journey clearer, safer and easier to evidence</h2>
+      </div>
+      <div class="two-column">
+        <div>
+          <p>The fictional service need is simple: a resident reports a public-highway problem, such as a faulty streetlight. The form needs to be clear, accessible and honest about what information is required.</p>
+          <p>Urgent risks need extra detail, operational colleagues need a readable internal view, and structured data should be suitable for later integration and support work.</p>
+        </div>
+        <ol class="journey-list">
+          <li>Resident reports a public-highway problem</li>
+          <li>Immediate risk questions gather the right level of detail</li>
+          <li>Validation protects the quality of fictional submissions</li>
+          <li>Staff can inspect the request in a small internal preview</li>
+          <li>Evidence records what was built, tested and limited</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="users" aria-labelledby="users-title">
+      <div class="section__header">
+        <p class="eyebrow">Users and needs</p>
+        <h2 id="users-title">Persona-based reviews, not formal usability research</h2>
+        <p>These reviews helped keep the work grounded in plausible needs, but they were not formal usability research with recruited participants.</p>
+      </div>
+      <div class="card-grid card-grid--four">
+        <article class="card">
+          <h3>Alex</h3>
+          <p><strong>Mobile user.</strong> Needs clear layout, readable labels and no horizontal scrolling at a narrow viewport.</p>
+          <a href="evidence/11-persona-testing/alex-mobile-updated-form.png">Alex mobile-form evidence</a>
+        </article>
+        <article class="card">
+          <h3>Priya</h3>
+          <p><strong>Keyboard and accessibility considerations.</strong> Needs visible focus, semantic form structure and usable error behaviour.</p>
+          <a href="evidence/11-persona-testing/priya-invalid-postcode-error-public-view.png">Priya error-state evidence</a>
+        </article>
+        <article class="card">
+          <h3>Tom</h3>
+          <p><strong>Plain-language needs.</strong> Needs short, direct wording and examples that make the form easier to complete.</p>
+          <a href="evidence/11-persona-testing/tom-plain-language-desktop.png">Tom form-content evidence</a>
+        </article>
+        <article class="card">
+          <h3>Sam</h3>
+          <p><strong>Internal operational view.</strong> Needs the submitted details, status and next action presented clearly.</p>
+          <a href="evidence/12-workflow/workflow-new-status.png">Sam workflow evidence</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section case-section" id="service-journey" aria-labelledby="journey-title">
+      <div class="case-container">
+        <div class="journey-intro">
+          <p class="eyebrow">Service journey</p>
+          <h2 id="journey-title">From resident report to structured learning evidence</h2>
+          <p>The page follows the fictional request from resident report through validation, structured data, internal review and downstream-system design evidence.</p>
+        </div>
+
+        <ol class="journey-flow" aria-label="Service journey stages">
+          <li><span>Resident report</span></li>
+          <li><span>Validation and conditional questions</span></li>
+          <li><span>Structured JSON</span></li>
+          <li><span>Internal case preview</span></li>
+          <li><span>Workflow progression</span></li>
+          <li aria-label="Interoperability and downstream-system design"><span class="journey-label-full">Interoperability and downstream-system design</span><span class="journey-label-mobile" aria-hidden="true">Interoperability &amp; system design</span></li>
+        </ol>
+
+        <aside class="journey-boundary">
+          <p>This flow describes the learning journey. Drupal, Mendix and Boomi were not live-connected.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tint case-section citizen-webform-section" id="webform" aria-labelledby="webform-title">
+      <div class="case-container">
+        <div class="citizen-webform-layout">
+          <div class="citizen-webform-content">
+            <p class="eyebrow">Citizen Webform</p>
+            <h2 id="webform-title">A clear public-highway reporting form</h2>
+
+            <div class="citizen-webform-copy">
+              <p>The fictional resident reports a public-highway problem through a Drupal Webform that collects the information needed for triage.</p>
+              <p>The form asks for the problem type, location, postcode, optional streetlight reference, risk information, additional details and fictional contact details. If the resident says there is an immediate safety risk, an additional risk-details question is shown.</p>
+              <p>The wording was reviewed for plain English. Help text and confirmation wording stay clear without displaying a fixed fictional reference number.</p>
+            </div>
+
+            <div class="citizen-webform-features" aria-labelledby="webform-structure-title">
+              <h3 id="webform-structure-title">Form structure</h3>
+              <dl>
+                <div>
+                  <dt>Problem and location</dt>
+                  <dd>Problem type, location description, postcode and optional streetlight reference.</dd>
+                </div>
+                <div>
+                  <dt>Risk information</dt>
+                  <dd>Immediate-safety-risk question and conditional risk-details field.</dd>
+                </div>
+                <div>
+                  <dt>Additional and contact information</dt>
+                  <dd>Additional information, fictional contact details and preferred contact method.</dd>
+                </div>
+                <div>
+                  <dt>Submission experience</dt>
+                  <dd>Clear validation, plain-language confirmation and a scoped confirmation message.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <aside class="citizen-webform-boundary" aria-labelledby="webform-boundary-title">
+              <h3 id="webform-boundary-title">Boundary</h3>
+              <p>This is a local fictional learning implementation. It does not collect real citizen data and is not a production council service.</p>
+            </aside>
+
+            <div class="citizen-webform-evidence-links" aria-label="Citizen Webform evidence links">
+              <h3>Evidence</h3>
+              <ul>
+                <li><a href="evidence/11-persona-testing/alex-mobile-updated-form.png">Open full mobile-form evidence</a></li>
+                <li><a href="evidence/11-persona-testing/alex-mobile-updated-conditional-field.png">Open conditional-field mobile evidence</a></li>
+                <li><a href="evidence/11-persona-testing/tom-plain-language-desktop.png">Open plain-language form evidence</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="citizen-webform-evidence">
+            <figure class="citizen-webform-figure">
+              <p class="evidence-type">Mobile form evidence</p>
+              <h3>Updated resident reporting form</h3>
+              <img src="evidence/11-persona-testing/alex-mobile-updated-form.png" alt="Mobile view of the updated fictional public-highway reporting form with readable labels, help text and risk questions">
+              <figcaption>
+                The updated fictional public-highway form reviewed for the Alex mobile persona.
+                <a href="evidence/11-persona-testing/alex-mobile-updated-form.png">Open full mobile-form evidence</a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section validation-section" id="validation" aria-labelledby="validation-title">
+      <div class="case-container">
+        <div class="validation-intro">
+          <div class="validation-intro__copy">
+            <p class="eyebrow">Conditional logic and PHP validation</p>
+            <h2 id="validation-title">Validation that is scoped, tested and honestly described</h2>
+            <p>Selecting an immediate safety risk reveals the risk-details field, and the field becomes required while it is visible. Whether a populated value is cleared after the condition changes has not been verified and is not claimed here.</p>
+            <p>Custom PHP validation rejected <code>ABC123</code>. The fictional postcode <code>BN3 1AA</code> was accepted, while <code>BN3 1 AA</code> remained invalid. The rule trims surrounding whitespace, converts letters to uppercase and collapses repeated whitespace before validating. This is not comprehensive postcode or address verification.</p>
+          </div>
+
+          <aside class="validation-summary" aria-labelledby="validation-summary-title">
+            <h3 id="validation-summary-title">Verified behaviour</h3>
+            <dl>
+              <div><dt>Invalid input</dt><dd>ABC123</dd></div>
+              <div><dt>Result</dt><dd>Rejected</dd></div>
+              <div><dt>Valid fictional input</dt><dd>BN3 1AA</dd></div>
+              <div><dt>Result</dt><dd>Accepted</dd></div>
+              <div><dt>Empty input</dt><dd>Enter a postcode, for example BN3 1AA.</dd></div>
+              <div><dt>Conditional field</dt><dd>Visible and required only when relevant</dd></div>
+              <div><dt>Hidden-value clearing</dt><dd>Not currently verified</dd></div>
+            </dl>
+          </aside>
+        </div>
+
+        <ol class="conditional-sequence" aria-label="Conditional logic sequence">
+          <li><span>Immediate safety risk selected</span></li>
+          <li><span>Risk-details field becomes visible and required</span></li>
+        </ol>
+
+        <div class="validation-comparison">
+          <figure class="validation-evidence-card">
+            <p class="evidence-type">Invalid postcode-shaped input</p>
+            <dl class="evidence-result">
+              <div><dt>Input</dt><dd>ABC123</dd></div>
+              <div><dt>Result</dt><dd>Rejected</dd></div>
+            </dl>
+            <img src="evidence/11-persona-testing/priya-invalid-postcode-error-public-view.png" alt="Fictional public-highway form showing an invalid-postcode error summary and inline error for ABC123">
+            <figcaption>
+              Public-safe visual evidence of the invalid-postcode summary and inline error.
+              <a href="evidence/11-persona-testing/priya-invalid-postcode-error-public-view.png">Open invalid-postcode evidence</a>
+            </figcaption>
+          </figure>
+
+          <figure class="validation-evidence-card">
+            <p class="evidence-type">Valid fictional postcode</p>
+            <dl class="evidence-result">
+              <div><dt>Input</dt><dd>BN3 1AA</dd></div>
+              <div><dt>Result</dt><dd>Accepted</dd></div>
+            </dl>
+            <img src="evidence/11-persona-testing/priya-confirmation-public-view.png" alt="Fictional public-highway confirmation page showing the thank-you heading and Back to form link">
+            <figcaption>
+              Public-safe visual evidence of the static confirmation page. Separate runtime checks confirmed that <code>BN3 1AA</code> was accepted.
+              <a href="evidence/11-persona-testing/priya-confirmation-public-view.png">Open confirmation evidence</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <aside class="validation-boundary" aria-labelledby="validation-boundary-title">
+          <h3 id="validation-boundary-title">Boundary</h3>
+          <p>The custom rule validates the demonstrated UK-postcode-shaped input used in this learning project. It is not comprehensive postal-address verification and does not confirm that a postcode or address exists.</p>
+        </aside>
+
+        <div class="validation-evidence-links" aria-label="Validation evidence links">
+          <h3>Evidence</h3>
+          <ul>
+            <li><a href="evidence/11-persona-testing/priya-empty-postcode-error-public-view.png">Open empty-postcode evidence</a></li>
+            <li><a href="evidence/11-persona-testing/priya-invalid-postcode-error-public-view.png">Open invalid-postcode evidence</a></li>
+            <li><a href="evidence/11-persona-testing/priya-confirmation-public-view.png">Open confirmation evidence</a></li>
+            <li><a href="evidence/11-persona-testing/alex-mobile-updated-conditional-field.png">Open conditional-field mobile evidence</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="accessibility" aria-labelledby="accessibility-title">
+      <div class="section__header">
+        <p class="eyebrow">Accessibility testing and iterative improvement</p>
+        <h2 id="accessibility-title">Practical checks, visible fixes and a clear boundary</h2>
+        <p class="important-boundary">The project was not certified as fully WCAG compliant, and dedicated end-to-end screen-reader testing was not completed.</p>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Tests performed</h3>
+          <ul class="check-list">
+            <li>Keyboard-only review</li>
+            <li>200% zoom and reflow review</li>
+            <li>Semantic and error-state checks</li>
+            <li>Rendered-markup and error-state checks</li>
+            <li>Bounded review of historical axe and WAVE records</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Improvements evidenced</h3>
+          <ul class="check-list">
+            <li>Visible inline errors</li>
+            <li>Error-summary focus behaviour</li>
+            <li>Confirmation heading and Back to form link</li>
+            <li>Clear scope and limitations</li>
+          </ul>
+        </article>
+      </div>
+      <div class="image-grid">
+        <figure class="evidence-card">
+          <img src="evidence/11-persona-testing/priya-empty-postcode-error-public-view.png" alt="Fictional public-highway form showing the empty-postcode inline error">
+          <figcaption>Public-safe visual evidence of the empty-postcode message.</figcaption>
+        </figure>
+        <figure class="evidence-card">
+          <img src="evidence/11-persona-testing/priya-invalid-postcode-error-public-view.png" alt="Fictional public-highway form showing a postcode error summary and inline error">
+          <figcaption>Public-safe visual evidence of the invalid-postcode error state.</figcaption>
+        </figure>
+        <figure class="evidence-card">
+          <img src="evidence/11-persona-testing/priya-confirmation-public-view.png" alt="Fictional confirmation page showing a thank-you heading and Back to form link">
+          <figcaption>Public-safe visual evidence of the scoped confirmation content.</figcaption>
+        </figure>
+      </div>
+      <p>Historical axe and WAVE records are retained as bounded technical context; the public-facing evidence above is limited to the visible form and confirmation states. The project makes no screen-reader, certification or full-WCAG-compliance claim.</p>
+    </section>
+
+    <section class="section case-section" id="yaml-json" aria-labelledby="yaml-json-title">
+      <div class="case-section__inner">
+        <div class="case-section__intro">
+          <div class="case-section__heading">
+            <p class="eyebrow">YAML and JSON</p>
+            <h2 id="yaml-json-title">Configuration export and a fixed fictional JSON endpoint</h2>
+            <p>The Drupal Webform configuration was exported as YAML evidence. Created a read-only Drupal GET endpoint returning one fixed fictional service-request record.</p>
+          </div>
+          <aside class="scope-panel" aria-labelledby="yaml-json-scope-title">
+            <h3 id="yaml-json-scope-title">Verified scope</h3>
+            <ul class="compact-list">
+              <li>Webform configuration exported as YAML</li>
+              <li>JSON response parsed successfully</li>
+              <li>Fixed fictional record returned</li>
+              <li><code>GET</code> supported</li>
+              <li><code>POST</code> not supported</li>
+              <li>Reference <code>LSR-DEMO-10482</code></li>
+              <li>No live submission integration</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="evidence-code-grid">
+          <article class="evidence-code-card">
+            <h3>Exported Webform configuration</h3>
+            <p>Short excerpt from the local Drupal Webform YAML export.</p>
+            <pre><code>id: report_public_highway_problem
+elements:
+  postcode:
+    '#type': textfield
+    '#title': Postcode
+  risk_details:
+    '#states':
+      visible:
+        ':input[name="immediate_safety_risk"]':
+          value: yes_immediate
+settings:
+  confirmation_type: page</code></pre>
+            <p>Configuration was reviewed alongside current runtime checks; the export is not presented as production-deployment evidence.</p>
+          </article>
+
+          <article class="evidence-code-card">
+            <h3>JSON endpoint response</h3>
+            <p>Short excerpt from the saved fixed fictional JSON response.</p>
+            <pre><code>{
+  "reference": "LSR-DEMO-10482",
+  "requestType": "faulty_streetlight",
+  "location": {
+    "postcode": "BN3 1AA"
+  },
+  "status": "new"
+}</code></pre>
+            <ul class="inline-link-list" aria-label="JSON endpoint evidence">
+              <li><a href="evidence/06-json-output/sample-request.json">Open fictional JSON sample</a></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="case-section__details">
+          <aside class="boundary-panel" aria-labelledby="yaml-json-boundary-title">
+            <h3 id="yaml-json-boundary-title">Boundary</h3>
+            <p>The JSON endpoint returns one fixed fictional demonstration record. It is read-only and does not expose or consume live Webform submissions.</p>
+            <p>The exported YAML is configuration evidence from the local Drupal learning environment, not proof of production deployment.</p>
+          </aside>
+          <div class="evidence-links evidence-links--wide" aria-label="YAML and JSON evidence">
+            <h3>Evidence</h3>
+            <ul>
+              <li><a href="evidence/06-json-output/sample-request.json">Open fictional JSON sample</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="workflow" aria-labelledby="workflow-title">
+      <div class="section__header">
+        <p class="eyebrow">Internal case preview and workflow</p>
+        <h2 id="workflow-title">A lightweight staff-facing preview, not a persistent case-management system</h2>
+      </div>
+      <p>The internal preview renders the tested JSON endpoint into request overview and detail views. It also demonstrates a session-only status workflow from <code>New</code> to <code>Closed</code>, with static next-action mapping, activity entries and refresh reset behaviour.</p>
+      <div class="image-grid">
+        <figure class="evidence-card">
+          <img src="evidence/12-workflow/workflow-new-status.png" alt="Fictional internal workflow preview in its New state with one initial activity entry">
+          <figcaption>The fictional browser-session workflow starts in the New state.</figcaption>
+        </figure>
+        <figure class="evidence-card">
+          <img src="evidence/12-workflow/workflow-closed-status.png" alt="Workflow preview showing the Closed status and disabled advance button">
+          <figcaption>Workflow progression reached Closed.</figcaption>
+        </figure>
+        <figure class="evidence-card">
+          <img src="evidence/12-workflow/workflow-mobile-preview.png" alt="Mobile view of the workflow preview with readable status and controls">
+          <figcaption>Workflow at a narrow mobile viewport.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section case-section" id="twig" aria-labelledby="twig-title">
+      <div class="case-section__inner">
+        <div class="twig-intro">
+          <div class="case-section__heading">
+            <p class="eyebrow">Twig confirmation override</p>
+            <h2 id="twig-title">A scoped confirmation template for one Webform</h2>
+            <p>A Webform-specific Twig confirmation template was registered for <code>report_public_highway_problem</code>. It presents static success content in clear British English, does not apply globally, and desktop and mobile results were evidenced.</p>
+            <p>The template does not alter validation, submission storage, conditional logic or workflow behaviour. It does not display submitted values or a dynamic reference.</p>
+          </div>
+          <aside class="scope-panel" aria-labelledby="twig-scope-title">
+            <h3 id="twig-scope-title">Scoped implementation</h3>
+            <ul class="compact-list">
+              <li>Webform-specific Twig template</li>
+              <li>Applies to <code>report_public_highway_problem</code></li>
+              <li>Does not apply globally</li>
+              <li>Confirmation rendered on desktop and mobile</li>
+              <li>Does not alter validation</li>
+              <li>Does not alter submission storage</li>
+              <li>Does not alter conditional logic</li>
+            </ul>
+          </aside>
+        </div>
+
+        <div class="twig-gallery" aria-label="Twig confirmation evidence">
+          <figure class="twig-evidence-card twig-evidence--desktop">
+            <p class="evidence-type">Desktop confirmation</p>
+            <img src="evidence/13-twig-confirmation/twig-confirmation-desktop.png" alt="Desktop confirmation page showing the message Thank you. Your report has been submitted">
+            <figcaption>
+              The rendered confirmation message is visible at desktop width.
+              <a href="evidence/13-twig-confirmation/twig-confirmation-desktop.png">Open desktop confirmation evidence</a>
+            </figcaption>
+          </figure>
+          <figure class="twig-evidence-card twig-evidence--mobile">
+            <p class="evidence-type">Mobile confirmation</p>
+            <img src="evidence/13-twig-confirmation/twig-confirmation-mobile.png" alt="Mobile confirmation page showing the thank-you message and Back to form link">
+            <figcaption>
+              The confirmation remains readable at a narrow viewport.
+              <a href="evidence/13-twig-confirmation/twig-confirmation-mobile.png">Open mobile confirmation evidence</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="twig-footer-grid">
+          <aside class="boundary-panel" aria-labelledby="twig-boundary-title">
+            <h3 id="twig-boundary-title">Boundary</h3>
+            <p>The Twig override is scoped to one Webform confirmation. It is not a global Drupal theme override and does not alter submission validation, storage, conditional logic or workflow behaviour.</p>
+          </aside>
+          <div class="evidence-links evidence-links--wide" aria-label="Twig confirmation evidence links">
+            <h3>Evidence</h3>
+            <ul>
+              <li><a href="evidence/13-twig-confirmation/twig-confirmation-desktop.png">Open desktop confirmation evidence</a></li>
+              <li><a href="evidence/13-twig-confirmation/twig-confirmation-mobile.png">Open mobile confirmation evidence</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint case-section" id="mendix" aria-labelledby="mendix-title">
+      <div class="case-section__inner">
+        <div class="mendix-intro">
+          <div class="case-section__heading">
+            <p class="eyebrow">Local Mendix learning application</p>
+            <h2 id="mendix-title">A local Mendix model and workflow demonstration</h2>
+            <p>Created a screenshot-supported local Mendix learning prototype using fictional manually entered data; the source package is not included in this repository.</p>
+            <p>The screenshots record a separate local prototype with a <code>ServiceRequest</code> entity, a <code>RequestStatus</code> enumeration, overview and edit pages, and a manually invoked status-advance microflow. It does not import Drupal JSON or demonstrate a live integration.</p>
+          </div>
+          <aside class="mendix-boundaries" aria-labelledby="mendix-boundaries-title">
+            <h3 id="mendix-boundaries-title">Mendix boundaries</h3>
+            <ul class="compact-list">
+              <li>Local app only</li>
+              <li>No Mendix Cloud deployment</li>
+              <li>Fictional record entered manually</li>
+              <li>No Drupal JSON import</li>
+              <li>No live Drupal-to-Mendix integration</li>
+              <li>Source package not included in this repository</li>
+            </ul>
+          </aside>
+        </div>
+
+        <dl class="implementation-summary">
+          <div><dt>Scope</dt><dd>Local learning prototype</dd></div>
+          <div><dt>Source package</dt><dd>Not included in this repository</dd></div>
+          <div><dt>Entity</dt><dd>ServiceRequest</dd></div>
+          <div><dt>Enumeration</dt><dd>RequestStatus</dd></div>
+          <div><dt>Pages</dt><dd>Overview and New/Edit</dd></div>
+          <div><dt>Microflow</dt><dd>ACT_ServiceRequest_AdvanceStatus</dd></div>
+          <div><dt>Data</dt><dd>One manually entered fictional record</dd></div>
+          <div><dt>Result</dt><dd>Screenshot-supported status progression through manual invocations</dd></div>
+        </dl>
+
+        <div class="mendix-workflow" aria-labelledby="mendix-workflow-title">
+          <h3 id="mendix-workflow-title">Status progression</h3>
+          <ol class="mendix-status-flow" aria-label="Mendix request status progression">
+            <li>
+              <span class="mendix-status-flow__number">1</span>
+              <span class="mendix-status-flow__label">New</span>
+            </li>
+            <li>
+              <span class="mendix-status-flow__number">2</span>
+              <span class="mendix-status-flow__label">Awaiting review</span>
+            </li>
+            <li>
+              <span class="mendix-status-flow__number">3</span>
+              <span class="mendix-status-flow__label">Assigned</span>
+            </li>
+            <li>
+              <span class="mendix-status-flow__number">4</span>
+              <span class="mendix-status-flow__label">In progress</span>
+            </li>
+            <li>
+              <span class="mendix-status-flow__number">5</span>
+              <span class="mendix-status-flow__label">Resolved</span>
+            </li>
+            <li>
+              <span class="mendix-status-flow__number">6</span>
+              <span class="mendix-status-flow__label">Closed</span>
+            </li>
+          </ol>
+          <p class="manual-invocation-note">This is a separate manually exercised prototype sequence, not the Drupal preview's status mapping.</p>
+          <h4>Prototype next-action mapping</h4>
+          <dl class="mendix-next-actions">
+            <div><dt>New</dt><dd>Confirm asset location</dd></div>
+            <div><dt>Awaiting review</dt><dd>Arrange inspection</dd></div>
+            <div><dt>Assigned</dt><dd>Complete repair work</dd></div>
+            <div><dt>In progress</dt><dd>Confirm resolution with the resident</dd></div>
+            <div><dt>Resolved</dt><dd>No further action after closure</dd></div>
+          </dl>
+        </div>
+
+        <div class="mendix-primary-evidence" aria-label="Primary Mendix evidence">
+          <figure class="evidence-card evidence-card--mendix">
+            <p class="evidence-type">Domain model</p>
+            <h3>Persistable ServiceRequest entity</h3>
+            <img src="evidence/14-mendix/mendix-domain-model-public-safe.png" alt="Mendix domain model showing the ServiceRequest entity and RequestStatus enumeration">
+            <figcaption>
+              Persistable ServiceRequest entity with request, contact, service, status and next-action attributes.
+              <a href="evidence/14-mendix/mendix-domain-model-public-safe.png">Open domain-model evidence</a>
+            </figcaption>
+          </figure>
+          <figure class="evidence-card evidence-card--mendix">
+            <p class="evidence-type">Microflow</p>
+            <h3>Advance-status microflow</h3>
+            <img src="evidence/14-mendix/mendix-advance-status-microflow-public-safe.png" alt="Mendix microflow used to advance the fictional request status">
+            <figcaption>
+              ACT_ServiceRequest_AdvanceStatus updates Status and NextAction, commits the object and refreshes the client.
+              <a href="evidence/14-mendix/mendix-advance-status-microflow-public-safe.png">Open microflow evidence</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="mendix-supporting-evidence" aria-label="Supporting Mendix evidence">
+          <figure class="evidence-card evidence-card--mendix">
+            <p class="evidence-type">Request overview</p>
+            <h3>Persisted fictional request</h3>
+            <img src="evidence/14-mendix/mendix-request-overview.png" alt="Mendix request overview showing the manually entered fictional service request">
+            <figcaption>
+              Manually entered fictional request persisted locally and displayed in the generated overview page.
+              <a href="evidence/14-mendix/mendix-request-overview.png">Open request-overview evidence</a>
+            </figcaption>
+          </figure>
+          <figure class="evidence-card evidence-card--mendix">
+            <p class="evidence-type">Closed status</p>
+            <h3>Final workflow state</h3>
+            <img src="evidence/14-mendix/mendix-status-closed.png" alt="Mendix request edit page showing the Closed status and No further action next action">
+            <figcaption>
+              Screenshot-supported local prototype state showing Closed and No further action.
+              <a href="evidence/14-mendix/mendix-status-closed.png">Open final Closed-status evidence</a>
+            </figcaption>
+          </figure>
+        </div>
+
+        <aside class="boundary-panel boundary-panel--full" aria-labelledby="mendix-boundary-title">
+          <h3 id="mendix-boundary-title">Boundary</h3>
+          <p>This was a local Mendix learning prototype. The record was entered manually, no Drupal JSON endpoint was consumed, no cloud deployment occurred and the source package is not included in this repository.</p>
+        </aside>
+
+        <div class="evidence-links evidence-links--wide" aria-label="Mendix evidence links">
+          <h3>Evidence</h3>
+          <ul>
+            <li><a href="evidence/14-mendix/mendix-domain-model-public-safe.png">Open domain-model evidence</a></li>
+            <li><a href="evidence/14-mendix/mendix-advance-status-microflow-public-safe.png">Open microflow evidence</a></li>
+            <li><a href="evidence/14-mendix/mendix-request-overview.png">Open request-overview evidence</a></li>
+            <li><a href="evidence/14-mendix/mendix-status-closed.png">Open final Closed-status evidence</a></li>
+            <li><a href="evidence/14-mendix/mendix-status-awaiting-review.png">Open Awaiting-review evidence</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section case-section" id="interoperability" aria-labelledby="interoperability-title">
+      <div class="case-section__inner">
+        <div class="case-section__intro">
+          <div class="case-section__heading">
+            <p class="eyebrow">Interoperability</p>
+            <h2 id="interoperability-title">JSON to XML, XPath and mock SOAP</h2>
+            <p>Generated well-formed XML and executed XPath checks against the fictional service-request record. Generated well-formed mock SOAP 1.1 request and response messages as an interoperability exercise.</p>
+          </div>
+          <aside class="scope-panel" aria-labelledby="interoperability-scope-title">
+            <h3 id="interoperability-scope-title">Verified scope</h3>
+            <ul class="compact-list">
+              <li>JSON parsed successfully</li>
+              <li>XML well-formed</li>
+              <li>XPath values verified</li>
+              <li>Mock SOAP request well-formed</li>
+              <li>Mock SOAP response well-formed</li>
+              <li>No live SOAP endpoint called</li>
+            </ul>
+          </aside>
+        </div>
+
+        <ol class="process-flow" aria-label="Interoperability evidence chain">
+          <li><span>JSON</span></li>
+          <li><span>Canonical XML</span></li>
+          <li><span>XPath</span></li>
+          <li><span>Mock SOAP request</span></li>
+          <li><span>Mock SOAP response</span></li>
+        </ol>
+
+        <div class="case-section__details">
+          <div class="case-copy">
+            <h3>Technical summary</h3>
+            <p>PHP <code>DOMDocument</code> and <code>DOMXPath</code> were used to generate and check structured fictional data. XML documents and mock SOAP messages were well-formed, and XPath returned expected fictional values.</p>
+            <p>The raw source status <code>new</code> was preserved through the XML and mock SOAP evidence. A real integration would need an explicit mapping to consuming-system enumeration values.</p>
+          </div>
+          <aside class="boundary-panel" aria-labelledby="interoperability-boundary-title">
+            <h3 id="interoperability-boundary-title">Boundary</h3>
+            <p>No live SOAP service was called. No WSDL was consumed. No XSD validation was performed.</p>
+            <div class="evidence-links" aria-label="Interoperability evidence">
+              <h4>Evidence</h4>
+              <ul>
+                <li><a href="evidence/15-interoperability/interoperability-test-note.md">Interoperability test note</a></li>
+                <li><a href="evidence/15-interoperability/field-mapping.md">Field mapping</a></li>
+                <li><a href="evidence/15-interoperability/xpath-checks.md">XPath checks</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tint case-section sql-section" id="sql" aria-labelledby="sql-title">
+      <div class="case-container">
+        <div class="sql-layout">
+          <div class="sql-intro case-section__heading">
+            <p class="eyebrow">SQL and data evidence</p>
+            <h2 id="sql-title">A separate fictional SQLite workflow</h2>
+            <p>Built and executed a fictional SQLite data model demonstrating joins, aggregation, transactions and constraints. The current verification ran the existing demonstration from a temporary copy, not against the tracked SQLite file.</p>
+          </div>
+          <aside class="sql-model-summary scope-panel" aria-labelledby="sql-model-title">
+            <h3 id="sql-model-title">Data model summary</h3>
+            <ul class="compact-list">
+              <li><code>service_request</code></li>
+              <li><code>service_request_activity</code></li>
+              <li>One-to-many relationship</li>
+              <li>Foreign-key enforcement</li>
+            </ul>
+          </aside>
+
+          <div class="sql-capabilities" aria-label="SQL capabilities demonstrated">
+            <article>
+              <h3>Querying</h3>
+              <ul>
+                <li>filtered <code>SELECT</code></li>
+                <li><code>ORDER BY</code></li>
+                <li><code>JOIN</code></li>
+                <li><code>GROUP BY</code></li>
+              </ul>
+            </article>
+            <article>
+              <h3>Data safety</h3>
+              <ul>
+                <li>prepared statement</li>
+                <li>committed transaction</li>
+                <li>rollback</li>
+                <li>foreign-key rejection</li>
+              </ul>
+            </article>
+          </div>
+
+          <aside class="sql-machine-values">
+            <h3>Machine-readable values</h3>
+            <pre><code>service_request_count=5
+service_request_activity_count=9
+foreign_key_rejection=PASS
+orphan_activity_count=0</code></pre>
+          </aside>
+
+          <aside class="sql-boundary boundary-panel" aria-labelledby="sql-boundary-title">
+            <h3 id="sql-boundary-title">Boundary</h3>
+            <p>The SQL evidence is a separate fictional SQLite learning database. It is not the Drupal database, uses no production data, includes no performance or load testing, and is not a production council data model. The private SQLite binary is excluded from the release-facing tree and is not public evidence.</p>
+          </aside>
+
+          <aside class="sql-evidence evidence-links" aria-label="SQL evidence">
+            <h3>Evidence</h3>
+            <ul>
+              <li><a href="evidence/16-sql-data/data-model.md">Data model</a></li>
+              <li><a href="evidence/16-sql-data/query-results.md">Query results</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="devops" aria-labelledby="devops-title">
+      <div class="section__header">
+        <p class="eyebrow">DevOps and operational support</p>
+        <h2 id="devops-title">Local runbook evidence and isolated restore validation</h2>
+      </div>
+      <p>Historical local operational evidence covers DDEV and Drupal health checks, route checks, syntax checks, configuration status, backup handling, isolated temporary-database restore and incident-runbook notes.</p>
+      <p class="boundary-note">This is sanitised local-development evidence only. The restore validation was data-level, not full application-level recovery, and it is not production DevOps, monitoring, high availability or disaster-recovery evidence.</p>
+    </section>
+
+    <section class="section section--design" id="boomi" aria-labelledby="boomi-title">
+      <div class="section__header">
+        <p class="eyebrow">Boomi-oriented design</p>
+        <h2 id="boomi-title">Design evidence only</h2>
+        <p class="important-boundary">No Boomi tenant, process, connector, Atom/runtime, execution or deployment was used.</p>
+      </div>
+      <p>Produced a Boomi-oriented process-design study; no Boomi tenant process was executed. The study proposes profiles, field mapping, validation decisions, routing, a SOAP connector concept, error handling, retry classification and test scenarios. It is grounded in separately tested JSON, XML, XPath and mock SOAP evidence.</p>
+      <p><a href="evidence/18-boomi-design/boomi-design-note.md">Boomi design study</a></p>
+    </section>
+
+    <section class="section" id="evidence" aria-labelledby="evidence-title">
+      <div class="section__header">
+        <p class="eyebrow">Evidence and testing</p>
+        <h2 id="evidence-title">Build, test, capture evidence, review claims, record limitations</h2>
+      </div>
+      <p>The repository contains implementation records, runtime checks, fictional data examples, visual evidence and bounded design material. Each item must be used only within its stated public-safety classification and technical boundary.</p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Implementation evidence</h3>
+          <p>Drupal Webform configuration, PHP validation, JSON endpoint, internal preview, workflow and Twig override.</p>
+        </article>
+        <article class="card">
+          <h3>Testing evidence</h3>
+          <p>Browser results, accessibility checks, syntax checks, parser checks and saved command output.</p>
+        </article>
+        <article class="card">
+          <h3>Claim review</h3>
+          <p>Final audit documents supported claims, unsupported claims, limitations and portfolio source guidance.</p>
+        </article>
+      </div>
+      <p>The case study is intentionally selective: private technical material, local transcripts and release-decision items are not presented as public evidence.</p>
+    </section>
+
+    <section class="section section--tint" id="decisions" aria-labelledby="decisions-title">
+      <div class="section__header">
+        <p class="eyebrow">Key decisions</p>
+        <h2 id="decisions-title">Choices that kept the project credible</h2>
+      </div>
+      <ul class="decision-list">
+        <li>Use fictional data only.</li>
+        <li>Keep integrations mocked unless actually executed.</li>
+        <li>Separate verified implementation from design-only evidence.</li>
+        <li>Favour accessible error handling.</li>
+        <li>Preserve honest local-only boundaries.</li>
+        <li>Avoid claims unsupported by evidence.</li>
+      </ul>
+    </section>
+
+    <section class="section section--limits" id="limitations" aria-labelledby="limitations-title">
+      <div class="section__header">
+        <p class="eyebrow">Limitations</p>
+        <h2 id="limitations-title">What this project does not claim</h2>
+      </div>
+      <div class="limit-grid">
+        <p>Local learning environment</p>
+        <p>No real citizen data</p>
+        <p>No production deployment</p>
+        <p>No formal user research</p>
+        <p>No full screen-reader testing</p>
+        <p>No full WCAG-compliance claim</p>
+        <p>Local-only Mendix app</p>
+        <p>No live Drupal-to-Mendix integration</p>
+        <p>No Boomi execution</p>
+        <p>No live SOAP endpoint</p>
+        <p>No XSLT implementation</p>
+        <p>SQLite only</p>
+        <p>No load or performance testing</p>
+        <p>Data-level restore validation only</p>
+      </div>
+    </section>
+
+    <section class="section" id="learning" aria-labelledby="learning-title">
+      <div class="section__header">
+        <p class="eyebrow">What I learned</p>
+        <h2 id="learning-title">Evidence makes the learning more useful</h2>
+      </div>
+      <div class="two-column">
+        <div>
+          <p>I learned how quickly a simple service journey becomes a set of linked decisions: wording, validation, conditional logic, accessible error handling, internal views and data shape all affect each other.</p>
+          <p>I also learned the value of separating application logic from integration design. The most useful evidence is not just what works, but what is clearly labelled as local, fictional, mocked, design-only or future work.</p>
+        </div>
+        <ul class="check-list">
+          <li>Translate user needs into form behaviour</li>
+          <li>Balance accessible UX and validation</li>
+          <li>Use evidence to support technical claims</li>
+          <li>Model data across formats and platforms</li>
+          <li>Design safe operational checks</li>
+          <li>Document constraints honestly</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--tint" id="next-steps" aria-labelledby="next-title">
+      <div class="section__header">
+        <p class="eyebrow">Next steps</p>
+        <h2 id="next-title">Proportionate future improvements</h2>
+      </div>
+      <ul class="next-list">
+        <li>Dedicated screen-reader testing.</li>
+        <li>Public deployment of a safe demonstration version.</li>
+        <li>Explicit cross-platform status mapping.</li>
+        <li>Live Mendix API import as a future learning task.</li>
+        <li>Boomi tenant-based implementation if access becomes available.</li>
+        <li>Improved automated accessibility regression checks.</li>
+        <li>Full application-level recovery testing in an isolated environment.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Council Digital Platforms Mini Lab. Personal learning project using fictional data only.</p>
+    <p><a href="#top">Back to top</a></p>
+  </footer>
+</body>
+</html>
